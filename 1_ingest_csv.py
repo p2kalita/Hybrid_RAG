@@ -175,18 +175,23 @@ def ingest_csv(csv_path: str) -> list[dict]:
 
 
 def main():
-    import sys
 
-    csv_files = sys.argv[1:] or list(Path(".").glob("*.csv"))
+    CSV_DIR = Path(__file__).parent / "data"
+
+    if not CSV_DIR.exists():
+        print(f"Folder not found: {CSV_DIR}")
+        return
+
+    csv_files = list(CSV_DIR.glob("*.csv"))
 
     if not csv_files:
-        print("Usage: python 1_ingest_csv.py tickets.csv")
+        print(f"No CSV files found in {CSV_DIR}")
         return
 
     all_records = []
 
     for csv_path in csv_files:
-        print(f"Ingesting {csv_path}")
+        print(f"Ingesting {csv_path.name}")
         records = ingest_csv(str(csv_path))
         all_records.extend(records)
         print(f"  -> {len(records)} chunks")

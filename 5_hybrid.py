@@ -84,7 +84,7 @@ if __name__ == "__main__":
     bm25, bm25_doc_ids = load_bm25()
     doc_embeddings, dense_doc_ids = embed_mod.build_or_load_index(corpus)
 
-    query = "What is this document about?"
+    query = "Describe issues related to portal downtime."
     print(f"\nQuery: {query}\n")
     results = search_hybrid(query, bm25, bm25_doc_ids, doc_embeddings, dense_doc_ids, k=5)
     for i, (doc_id, score) in enumerate(results, 1):
