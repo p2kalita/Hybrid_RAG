@@ -6,11 +6,12 @@ A from-scratch hybrid retrieval pipeline, adapted from
 **What changed from the original:**
 | | Original (ai-cookbook) | This version |
 |---|---|---|
+| Chunking method  | No chunking used | `RecursiveCharacterTextSplitter`
 | Dense embeddings | OpenAI `text-embedding-3-small` (API) | HuggingFace `sentence-transformers/all-MiniLM-L6-v2` (local, free, CPU) |
 | Sparse retrieval | BM25 (`rank_bm25`) | Same |
 | Fusion | Reciprocal Rank Fusion (RRF) | Same |
 | Generation | None (retrieval-only demo) | Added: Groq-hosted LLM generates the final answer |
-| Corpus | FiQA finance dataset (parquet) | Your own `.txt`/`.md` files in `data/` |
+| Corpus | FiQA finance dataset (parquet) | Your own `.pdf` files in `data/pdf/` |
 
 ## How it works
 
