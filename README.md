@@ -10,7 +10,7 @@ A from-scratch hybrid retrieval pipeline, adapted from
 | Sparse retrieval | BM25 (`rank_bm25`) | Same |
 | Fusion | Reciprocal Rank Fusion (RRF) | Same |
 | Generation | None (retrieval-only demo) | Added: Groq-hosted LLM generates the final answer |
-| Corpus | FiQA finance dataset (parquet) | Your own `.txt`/`.md` files in `data/` |
+| Corpus | FiQA finance dataset (parquet) | Your own `.pdf` files in `data/pdf/` |
 
 ## How it works
 
