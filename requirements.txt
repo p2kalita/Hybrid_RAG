@@ -6,4 +6,6 @@ tqdm>=4.66.0
 python-dotenv>=1.0.0
 pymupdf4llm>=0.0.17
 langchain-text-splitters>=0.3.0
+pandas
+nltk
 ipykernel
